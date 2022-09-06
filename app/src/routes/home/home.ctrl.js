@@ -1,7 +1,4 @@
-const users = {
-  id: ["abc", "def", "qwer"],
-  passward: ["123", "456", "123456"],
-}
+const UserStorage = require("../../models/UserStorage");
 
 const output = {
   home: (req, res) => {
@@ -17,19 +14,20 @@ const process = {
   login: (req, res) => {
     const id = req.body.id,
       passward = req.body.passward;
-      
+    
+    const users = UserStorage.getUsers("id", "psword");
+    const response = {};
     if(users.id.includes(id)){
       const idx = users.id.indexOf(id);
-      if(users.passward[idx] === passward){
-        return res.json({
-          success: true,
-        })
+      if(users.psword[idx] === passward){
+        response.success = true;
+        return res.json(response);
       }
     }
-    return res.json({
-      success: false,
-      msg: "로그인에 실패하였습니다.",
-    })    
+
+    response.success = false;
+    response.msg = "로그인에 실패하셨습니다.";
+    return res.json(response);    
   }
 }
 
