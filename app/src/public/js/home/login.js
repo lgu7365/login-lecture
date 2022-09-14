@@ -1,6 +1,6 @@
 const id = document.querySelector('#id');
 const passward = document.querySelector('#passward');
-const loginbtn = document.querySelector('button');
+const loginbtn = document.querySelector('#button');
 
 loginbtn.addEventListener('click', login);
 
