@@ -1,5 +1,1 @@
-{
-  "id": ["abc", "def", "qwer"],
-  "psword": ["123", "456", "123456"],
-  "name": ["abc", "def", "qwer"]
-}
+{"id":["abc","def","qwer","abcd"],"psword":["123","456","123456","125"],"name":["abc","def","qwer","aa"]}
